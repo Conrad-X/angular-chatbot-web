@@ -7,8 +7,7 @@ import { OpenAIResponse } from './utility/constants';
   providedIn: 'root'
 })
 export class OpenAIService {
-  api_url: string = 'http://localhost:8000';
-  // "https://fast-server-api-default-ae8642698ddc.herokuapp.com"
+  api_url: string = "https://fast-server-api-default-ae8642698ddc.herokuapp.com";
 
   constructor(private http: HttpClient) { }
 
