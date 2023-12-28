@@ -20,6 +20,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <script>
+      fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+          localStorage.setItem("ip", data.ip)
+        })
+        .catch(error => {
+            console.log('Error:', error);
+        });
+    </script>
     <style>
       body {
         margin: 0px !important;

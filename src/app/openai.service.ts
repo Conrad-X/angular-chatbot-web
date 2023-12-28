@@ -2,17 +2,19 @@ import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/htt
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { OpenAIResponse } from './utility/constants';
+import { environment } from './../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OpenAIService {
-  api_url: string = "https://fast-server-api-default-ae8642698ddc.herokuapp.com";
+  api_url: string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   QueryPrompt(prompt: string): Observable<OpenAIResponse>{
-    return this.http.post<any>(`${this.api_url}/queryAssistant`, { prompt}).pipe(catchError(this.error));
+    let ip = localStorage.getItem("ip")
+    return this.http.post<any>(`${this.api_url}/queryAssistant`, {prompt, address: ip}).pipe(catchError(this.error));
   }
 
   error(error: HttpErrorResponse) {
