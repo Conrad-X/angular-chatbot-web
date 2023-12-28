@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,5 +10,14 @@ import { CommonModule } from '@angular/common';
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HeaderComponent {
+  toggle = false;
+  @Output() toggleChat = new EventEmitter<string>()
 
+  hide(){
+    this.toggle = !this.toggle;
+    window?.top?.postMessage(this.toggle.toString(), '*')
+    this.toggleChat.emit(this.toggle.toString())
+  }
 }
+
+

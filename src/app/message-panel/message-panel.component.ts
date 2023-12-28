@@ -60,7 +60,7 @@ export class MessagePanelComponent{
   }
 
   ngAfterViewInit() {
-    this.scrollContainer = this.scrollFrame.nativeElement;
+    this.scrollContainer = this.scrollFrame?.nativeElement;
   } 
 
   public scrollToBottom(): void {

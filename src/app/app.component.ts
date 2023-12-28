@@ -32,8 +32,13 @@ export class AppComponent  {
   title = 'exploring-angular';
   data: Message[] = [];
   loading: boolean = false
+  hide: boolean = false;
 
   constructor(private openaiService: OpenAIService) {}
+
+  toggleChat($event: string){
+    this.hide = $event === "true"? true: false;
+  }
 
   getMessage($event: string){
     if(!this.loading){

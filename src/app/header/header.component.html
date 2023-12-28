@@ -1,7 +1,21 @@
-<section class="header-container">
-    <img src="../../assets/conrad-labs-logo.png" /> 
-    <div class="heading">
-        Policy Bot
+<section class="header-outer-container">
+    <section class="header-container">
+        <img src="../../assets/conrad-labs-logo.png" /> 
+        <div class="heading">
+            Policy Bot
+        </div>
+        <div class="beta">BETA</div>
+    </section>
+    <div class="minimize-container">
+        @if (!toggle) {
+            <span id="minimize" (click)="hide()" class="minimize-icon material-symbols-outlined">
+                minimize
+            </span>
+        }
+        @else {
+            <span id="minimize-add" (click)="hide()" class="add-icon minimize-icon material-symbols-outlined">
+                add
+            </span>
+        }
     </div>
-    <div class="beta">BETA</div>
 </section>
