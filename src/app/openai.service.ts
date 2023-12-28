@@ -7,13 +7,13 @@ import { OpenAIResponse } from './utility/constants';
   providedIn: 'root'
 })
 export class OpenAIService {
-  api_url: string = "https://fast-server-api-default-ae8642698ddc.herokuapp.com/" 
+  api_url: string = "https://fast-server-api-default-ae8642698ddc.herokuapp.com" 
   //'http://localhost:8000/';
 
   constructor(private http: HttpClient) { }
 
   QueryPrompt(prompt: string): Observable<OpenAIResponse>{
-    return this.http.post<any>(`${this.api_url}queryAssistant`, { prompt}).pipe(catchError(this.error));
+    return this.http.post<any>(`${this.api_url}/queryAssistant`, { prompt}).pipe(catchError(this.error));
   }
 
   error(error: HttpErrorResponse) {
