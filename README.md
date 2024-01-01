@@ -6,4 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Screenshots
 
+The following screenshot references to the mobile view comprising of it's UI components
+
+<img width="300" alt="Screenshot 2024-01-02 at 1 12 32 AM" src="https://github.com/Conrad-X/chatbot-web/assets/6302514/486a402c-8560-433d-ac9b-360c41649917">
+
 
